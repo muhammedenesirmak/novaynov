@@ -1,0 +1,318 @@
+/* Professional Minimal Design System */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-black text-white font-sans;
+    background-image:
+      radial-gradient(
+        circle at 20% 50%,
+        rgba(139, 92, 246, 0.06) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        rgba(139, 92, 246, 0.04) 0%,
+        transparent 50%
+      );
+    background-attachment: fixed;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* ========================================
+     CARD SYSTEM - Clean & Professional
+     ======================================== */
+
+  .card {
+    @apply bg-neutral-900/40 backdrop-blur-sm border border-white/5 rounded-subtle;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .card-hover {
+    @apply card transition-all duration-200;
+  }
+
+  .card-hover:hover {
+    @apply border-white/10 bg-neutral-900/50;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  }
+
+  /* ========================================
+     BUTTON SYSTEM
+     ======================================== */
+
+  .btn {
+    @apply px-4 py-2.5 rounded-subtle font-medium transition-all duration-150;
+    @apply focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:ring-offset-2 focus:ring-offset-black;
+  }
+
+  .btn-primary {
+    @apply bg-purple-600 text-white;
+    @apply hover:bg-purple-500;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .btn-secondary {
+    @apply bg-neutral-800 text-white border border-white/10;
+    @apply hover:bg-neutral-700 hover:border-white/20;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-neutral-300 hover:text-white;
+    @apply hover:bg-white/5;
+  }
+
+  /* ========================================
+     INPUT FIELDS
+     ======================================== */
+
+  .input {
+    @apply bg-neutral-900/50 border border-white/10 px-4 py-2.5 rounded-subtle;
+    @apply text-white placeholder-neutral-500;
+    @apply focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50;
+    @apply transition-all duration-150;
+  }
+
+  .input:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  /* ========================================
+     PROGRESS BAR
+     ======================================== */
+
+  .progress {
+    @apply w-full h-1.5 rounded-full overflow-hidden bg-neutral-800;
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-300;
+    @apply bg-purple-600;
+  }
+
+  /* ========================================
+     BADGES
+     ======================================== */
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-1 rounded-subtle-sm text-xs font-medium;
+  }
+
+  .badge-purple {
+    @apply bg-purple-500/10 text-purple-400 border border-purple-500/20;
+  }
+
+  .badge-success {
+    @apply bg-success/10 text-success border border-success/20;
+  }
+
+  /* ========================================
+     NAVBAR
+     ======================================== */
+
+  .navbar {
+    @apply fixed top-0 left-0 right-0 z-50;
+    @apply bg-neutral-900 border-b border-white/10;
+  }
+
+  /* ========================================
+     TEXT STYLES
+     ======================================== */
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent;
+  }
+
+  /* ========================================
+     ANIMATIONS - Minimal
+     ======================================== */
+
+  .fade-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* ========================================
+     NEW ANIMATIONS - Modern Sign-In
+     ======================================== */
+
+  .animate-element {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(20px);
+    animation: fadeSlideIn 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeSlideIn {
+    to {
+      opacity: 1;
+      filter: blur(0px);
+      transform: translateY(0px);
+    }
+  }
+
+  .animate-slide-right {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateX(-20px);
+    animation: slideRightIn 0.8s ease-out forwards;
+  }
+
+  @keyframes slideRightIn {
+    to {
+      opacity: 1;
+      filter: blur(0px);
+      transform: translateX(0px);
+    }
+  }
+
+  .animate-testimonial {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(20px) scale(0.95);
+    animation: testimonialIn 0.6s ease-out forwards;
+  }
+
+  @keyframes testimonialIn {
+    to {
+      opacity: 1;
+      filter: blur(0px);
+      transform: translateY(0px) scale(1);
+    }
+  }
+
+  /* Custom Checkbox Styling */
+  .custom-checkbox {
+    @apply w-4 h-4 rounded border-2 border-white/20 bg-transparent cursor-pointer;
+    @apply checked:bg-purple-600 checked:border-purple-600;
+    @apply focus:ring-2 focus:ring-purple-500/50 focus:ring-offset-2 focus:ring-offset-black;
+    @apply transition-all duration-150;
+  }
+
+  /* Glass Input Wrapper */
+  .glass-input-wrapper {
+    @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm;
+    @apply transition-colors duration-200;
+    @apply focus-within:border-purple-400/70 focus-within:bg-purple-500/10;
+  }
+
+  /* ========================================
+     AUTH LANDING COMPONENTS - Minimal
+     ======================================== */
+
+  /* Split Layout for Auth Pages */
+  .auth-split-container {
+    @apply min-h-screen flex flex-col lg:flex-row;
+  }
+
+  .auth-form-side {
+    @apply w-full lg:w-2/5 flex items-center justify-center p-4 lg:p-8;
+  }
+
+  .auth-content-side {
+    @apply w-full lg:w-3/5 flex items-center justify-center p-8 lg:p-12;
+    @apply bg-gradient-to-br from-purple-950/20 via-transparent to-purple-900/10;
+  }
+
+  /* Feature Card - Minimal Hover */
+  .feature-card {
+    @apply p-5 rounded-2xl border border-white/5 bg-white/[0.02];
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .feature-card:hover {
+    @apply border-purple-500/20 bg-white/[0.04];
+    transform: translateY(-2px);
+  }
+
+  /* Stat Card - Subtle Effect */
+  .stat-card {
+    @apply text-center p-4;
+    @apply transition-opacity duration-300;
+  }
+
+  .stat-card:hover {
+    @apply opacity-80;
+  }
+
+  /* Minimal Glow Effect */
+  .glow-subtle {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
+  }
+
+  /* Floating Animation for NovaFoks Mascot */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Animation Delays */
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+  .animate-delay-600 {
+    animation-delay: 600ms;
+  }
+  .animate-delay-700 {
+    animation-delay: 700ms;
+  }
+  .animate-delay-800 {
+    animation-delay: 800ms;
+  }
+  .animate-delay-900 {
+    animation-delay: 900ms;
+  }
+  .animate-delay-1000 {
+    animation-delay: 1000ms;
+  }
+  .animate-delay-1200 {
+    animation-delay: 1200ms;
+  }
+  .animate-delay-1400 {
+    animation-delay: 1400ms;
+  }
+}
